@@ -150,17 +150,17 @@ Aşağıdakileri konsolda gösterim (console.log) işlemi gerçekleştirerek, yu
 //(1) Dizideki ilk fenomen (0. dizin) profil (profile) adı
 fenomenler.map((item) => item.profile)[0];
 //veya
-Object.values(fenomenler)[0].profile;
+fenomenler[0].profile;
 
 //(2) Dizideki üçüncü fenomenin (2. dizin) takipçi (followers) sayısı
 
-Object.values(fenomenler)[2].followers;
+fenomenler[2].followers;
 
 /* Görev 2 (otomatik kontrol testi yapılmayacak):
 (işlev yazmanıza gerek yok)
 Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bieber' ın soyismi 'Biber' olarak yanlış yazılmış. Bu sorunu düzeltin ve çalışmanızı kontrol etmek için console.log() yapın.*/
 
-console.log(Object.values(fenomenler)[6].profile, "Düzeltme yapıldı");
+console.log(fenomenler[6].profile, "Düzeltme yapıldı");
 
 /*  Görev 3:
 Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
@@ -253,9 +253,9 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 
 function enFenomenler(a) {
   let enFenomenlerDizi =[];
-  for(var i = 0 ; i<Object.values(a).length ; i++){
-    if(Object.values(a)[i].followers > 100000000){
-      enFenomenlerDizi.push(Object.values(a)[i].profile)
+  for(var i = 0 ; i<a.length ; i++){
+    if(a[i].followers > 100000000){
+      enFenomenlerDizi.push(a[i].profile)
     }
   }
   return enFenomenlerDizi
@@ -271,9 +271,9 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 */
 
 function fenomenGonderimSayisi(a,b) {
-  for(var i = 0 ; i<Object.values(a).length ; i++){
-    if(Object.values(a)[i].profile===b){
-      return Object.values(a)[i].posts
+  for(var i = 0 ; i<a.length ; i++){
+    if(a[i].profile===b){
+      return a[i].posts
     }
   }
 }
@@ -297,7 +297,8 @@ function platformaGoreCokGonderiYapanFenomen(a,b) {
       enCokGönderiAdedi=a[i].posts
       enCokGönderiProfili=a[i].profile
     }
-  }return enCokGönderiProfili
+  }
+  return enCokGönderiProfili
 }
 
 /* ***** GÖREVLERİN SONU ***** */
